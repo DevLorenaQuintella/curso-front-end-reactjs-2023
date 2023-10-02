@@ -36,15 +36,12 @@ function App() {
 
 
   async function carregarDadosApi (){
-    console.log('carregarDadosApi')
 
     const response = await fetch ("https://rickandmortyapi.com/api/character/")
 
     const json = await response.json()
 
     const results = json.results
-
-    console.log(results)
 
     setItens(results)
 
@@ -57,9 +54,6 @@ function App() {
     carregarDadosApi()
   }, [])
   
-
-  console.log("Renderizando Componente")
-
   return (
     <>
     {itens.map(function (item, index) {
