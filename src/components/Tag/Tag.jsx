@@ -1,8 +1,10 @@
 import './Tag.css'
 
-export default function Tag() {
+export default function Tag(props) {
+    //console.log(props)
 
-    return <div>Tag funcionando</div>
+    const text = props.text;
+    return <div className='tag'>{text}</div>
 
-    
+
 }

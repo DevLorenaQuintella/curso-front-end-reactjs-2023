@@ -4,11 +4,19 @@ import "./Card.css"
 export default function Card (props) {
     const item = props.item;
 
+    //console.log(item);
+
+    const tags = item.tags || [];
+    console.log(tags);
+
     return <div className='Card'>
     <h2>{item.nome}</h2>
 
     <div className='tags'>
-        <Tag/>
+        {tags.map(function(tag,index){
+         return <Tag text = {tag} key={`card_char_${index}`}/>
+    })}
+    
      {/*
      <div className='tag'>Status: Anime</div>
      <div className='tag'>Espécie: Humana</div>
@@ -18,5 +26,5 @@ export default function Card (props) {
     <img src={item.imagemUrl} />
    </div>
 
-
+ 
 } 

@@ -5,11 +5,13 @@ import Card from './components/Card/Card'
 function App() {
   const item1 = {
     nome: 'Naruto',
-    imagemUrl:'https://tm.ibxk.com.br/2021/10/05/05091846887061.jpg'
+    imagemUrl:'https://tm.ibxk.com.br/2021/10/05/05091846887061.jpg',
+    tags: ['Origem: Japão']
   }
   const item2 = {
     nome: 'One Piece',
-    imagemUrl: 'https://tm.ibxk.com.br/2022/11/03/03095855664065.jpg'
+    imagemUrl: 'https://tm.ibxk.com.br/2022/11/03/03095855664065.jpg',
+    tags:['Origem: Japão']
   }
   const item3 = {
     nome: 'Demon Slayer',
@@ -26,8 +28,8 @@ function App() {
   const itens = [item1, item2, item3, item4, item5]
   return (
     <>
-    {itens.map(function (item) {
-      return <Card item={item}/>
+    {itens.map(function (item, index) {
+    return <Card item={item} key={`card_char_${index}`}/>
     })}
     
     
